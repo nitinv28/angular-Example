@@ -1,0 +1,104 @@
+
+<section id="careers" class="page-section"> 
+		<header> 
+			<div class="container">
+				<h1>Transform governments and businesses.</h1> 
+			</div>
+		</header>
+		<div class="container">
+			<div class="row"> 
+					<div class="greentech-tab container">
+						<ul class="nav nav-pills mrgauto"> 
+							<li class="active link"> <a href="#1d" data-toggle="tab" class='tabcss'>Pre-sales Engineer <span class='selectblock'>&nbsp;</span> </a> </li>
+							<li class='pipe'><span>|</span></li> <li class=""><a href="#2d" data-toggle="tab" class='tabcss1'>Java/Spring Developer <span>&nbsp;</span> </a> </li>
+							<li class='pipe'><span>|</span></li> <li class=""><a href="#3d" data-toggle="tab" class='tabcss1'>Liferay Developer <span>&nbsp;</span> </a> </li> 
+						</ul>
+						<div class="tab-content clearfix"> 
+							<div class="col-lg-4 text-left content-grid"> 
+								<div class="content-header">
+									<p class='link'>Pre-sales Engineer<span class='selectblock'>&nbsp;</span></p>
+										<h1 class='auihead'>Leads generation &amp; qualification, Proposals, and Presentations. </h1> 
+								</div>
+								<h4 class='hh'> 01 / Full-time / Jaipur, India </h4>
+								<p> Pre-sales Engineer shall support sales productivity and keeps the “prospect funnel” of Americas and EMEA regions full at all times. </p> 
+								<ul class='contentul'> 
+									<li class='contentulli'> Identify, and qualify prospects in CRM,</li> 
+									<li class='contentulli'>Prepare proposals in coordination with Sales, Development, QA, and Support teams,</li> 
+									<li class='contentulli'>Secures “technical close” along with product demonstrations, and</li> 
+									<li class='contentulli'>Ensures that the proposed solution accurately addresses Clients’ needs. </li> 
+								</ul> 
+							</div> 
+
+							
+
+							<div class="col-lg-4 text-left content-grid"> 
+									<div class="content-header">
+											<p>&nbsp;</p>
+											<h4 class="form-header"> Mandatory Skills </h4>
+									</div>
+								
+									<ul class='contentul'> 
+											<li class='contentulli'>Deep understanding of Sales Processes</li> 
+											<li class='contentulli'>Expert in Microsoft® Word™, PowerPoint™, and Excel™</li>
+											<li class='contentulli'>Quick to grasp complex technical &amp; business concepts</li> 
+											<li class='contentulli'>Demonstrated ability in scoping software development, implementation, &amp; support projects</li>
+											<li class='contentulli'>Ability to summarize or elaborate as necessary</li>
+											<li class='contentulli'>Fluent in written and spoken English with completely neutral accent</li> 
+									</ul> 
+									<h4> Minimum Qualifications &amp; Experience </h4>
+									<ul class='contentul'> 
+											<li class='contentulli'>4-year full-time Engineering degree in Electronics &amp; Telecommunications, Computer Sciences, or IT. </li> 
+											<li class='contentulli'>1-3 years of relevant experience. </li> 
+									</ul> 
+							</div> 
+							<div class="col-lg-4 text-left content-grid">
+									<div class="content-header">
+											<p>&nbsp;</p>
+											<h4 class="form-header">Apply now</h4> 
+									</div>
+								
+									<form ngNativeValidate id = "userData" method="POST" enctype="multipart/form-data" name = "userData" #userFormData ="ngForm" (ngSubmit) = "setDetails(userFormData.value)"> 
+										<div class="form-group">
+											<input type="text" placeholder="Name" required="" oninvalid="this.setCustomValidity('Name can not be Blank!')" oninput="this.setCustomValidity('')" class="form-control textbox" id="name" name ="name" ngModel>
+										</div>
+										<div class="form-group">
+											<input type="email" placeholder="Email" required data-errormessage-value-missing="Please Enter Email Id" data-errormessage-type-mismatch="Invalid!" class="form-control textbox" id="email" name="email" ngModel>
+										</div> 
+										<div class="form-group">
+											<input type="file" placeholder="file" style='width: 417px;display: inline-block;' required  class="form-control textbox" id="file" name ="file" ngModel >
+											<button type="button" (click)="uploadFile()" style='height: 50px;' class="btn btn-default">upload</button>
+										</div> 
+										<div class="form-group"> 
+											<input type="text" placeholder="Mobile" onkeypress='return event.charCode >= 48 && event.charCode <= 57' maxlength="10" required oninvalid="this.setCustomValidity('Please Enter valid mobile no ')" oninput="this.setCustomValidity('')" class="form-control textbox" id="mobile" name="mobile" ngModel>
+										</div> 
+										<div class="form-group"> 
+											<textarea placeholder="Message" class="form-control textbox" oninvalid="this.setCustomValidity('Message can not be Blank!')"  oninput="this.setCustomValidity('')" required id="message" name="message" ngModel></textarea>
+										</div> <button type="submit" class="btn btn-default">Submit</button>
+									</form> 
+							</div>
+						</div> 
+					</div> 
+				</div>
+				<div class="page-break">&nbsp;</div>
+				<!-- popup window -->
+				<div *ngIf = isTrue>
+						<div class="modal-dialog" style='position: absolute;margin-left: 486px;margin-top: -446px;'>
+							<div class="modal-content">
+								   <div class="modal-header">
+									   <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button> 
+									   <h4 class="modal-title" id="myModalLabel"> Request submited </h4> 
+								   </div>
+								   <!-- Modal Body --> 
+									<div class="modal-body"> 
+										<form id="requestdemo" action="#body" onsubmit="return false;" class="has-validation-callback"> 
+												<div style="text-align:center">
+													<div class="message success"> <h4>Thank you for submitting your request, we will contact you shortly.</h4> </div>
+													<button type="button" (click)="hidePopup()" class="btn btn-default" data-dismiss="modal"> Close </button>
+												</div>
+										</form> 
+									</div> 
+								</div> 
+						</div>	
+				</div>
+		</div>
+	</section>
