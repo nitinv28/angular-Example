@@ -23,11 +23,11 @@ export class ApplynowComponent implements OnInit {
   private hidePopup(){
     console.log("Hide pop-------------");
     this.isTrue= false;
-    document.getElementById('name').value ="";
-    document.getElementById('email').value ="";
-    document.getElementById('file').value ="";
-    document.getElementById('mobile').value ="";
-    document.getElementById('message').value ="";
+    (<HTMLInputElement>document.getElementById('name')).value ="";
+    (<HTMLInputElement>document.getElementById('email')).value ="";
+    (<HTMLInputElement>document.getElementById('file')).value ="";
+    (<HTMLInputElement>document.getElementById('mobile')).value ="";
+    (<HTMLInputElement>document.getElementById('message')).value ="";
   }
 
   private getApiServices() {
@@ -52,16 +52,15 @@ export class ApplynowComponent implements OnInit {
       headers.append('Content-Type', 'multipart/form-data;boundary='+Math.random());
       headers.append('Accept', 'application/json');
 
-
       console.log(this.userData);
       userDetails.name ="";
       this.isTrue= true;
 
       return  this.http.post('http://localhost:8080/apply_now',this.userData)
-                  .subscribe(data => {
-                        this.data = data;
-                          console.log(data);
-    });
+              .subscribe(data => {
+                    this.data = data;
+                      console.log(data);
+       });
 }
 
 
@@ -69,12 +68,8 @@ export class ApplynowComponent implements OnInit {
 private fileSizevalidation(){
   window.onload=function(){
     document.getElementById('file').addEventListener('change', checkFile, false);
-    
     function checkFile(e) {
-    
         var file_list = e.target.files;
-        
-    
         for (var i = 0, file; file = file_list[i]; i++) {
           this.fileData=file;
             var sFileName = file.name;
@@ -88,20 +83,16 @@ private fileSizevalidation(){
                 this.txt += "Size: " + iConvert + " MB \n\n";
                 this.txt += "Please make sure your file is in pdf or doc format and less than 1 MB.\n\n";
                 alert(this.txt);
-                document.getElementById('file').value ="";
-            }
-            else{
-              
-            
+                (<HTMLInputElement>document.getElementById('file')).value ="";
             }
         }
     }
     }//]]> 
-    
 }
+
 private uploadFile() {
     console.log("-----------Upload File fileData");
-    var input = document.getElementById('file');
+    var input = <HTMLInputElement>document.getElementById('file');
     var file = input.files[0];
     let formData = new FormData();
     formData.append("file", file, file.name);
